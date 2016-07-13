@@ -39,7 +39,7 @@ pub fn rewrite_comment(orig: &str,
                 ("/*! ", " */", " * ")
             } else if orig.starts_with("/*") {
                 ("/* ", " */", " * ")
-            } else if orig.starts_with("///") {
+            } else if orig.starts_with("///") && !orig.starts_with("////") {
                 ("/// ", "", "/// ")
             } else if orig.starts_with("//!") {
                 ("//! ", "", "//! ")
